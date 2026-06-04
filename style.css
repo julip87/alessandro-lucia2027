@@ -256,3 +256,11 @@ footer {
         width: 90%;
     }
 }
+
+section {
+    padding: 90px 20px;
+}
+
+section:nth-child(even) {
+    background-color: #f6f3ee;
+}
