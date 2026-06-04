@@ -280,3 +280,52 @@ section:nth-child(even) {
     color: #666;
     font-size: 1.1rem;
 }
+
+.navigation {
+    text-align: center;
+}
+
+.navigation p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #666;
+}
+
+.nav-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 260px;
+    padding: 25px;
+
+    text-decoration: none;
+
+    background: white;
+    border-radius: 16px;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+    color: #2b2b2b;
+
+    transition: all 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.nav-card span {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #777;
+}
