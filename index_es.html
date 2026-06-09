@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucia & Alessandro · 19 de Junio de 2027 · Salerno</title>
+  <meta name="description" content="Boda de Lucia y Alessandro — 19 de Junio de 2027, Catedral de Salerno y Masseria La Morella." />
+  <meta name="theme-color" content="#b08d57" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lucia & Alessandro · 19 de Junio de 2027 · Salerno" />
+  <meta property="og:description" content="Boda de Lucia y Alessandro — 19 de Junio de 2027, Catedral de Salerno y Masseria La Morella." />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="it" href="../it/index.html" />
+  <link rel="alternate" hreflang="es" href="../es/index.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+(function(){
+  var target=new Date("2027-06-19T16:00:00+02:00").getTime();
+  var el=document.getElementById("cd");
+  if(!el)return;
+  function tick(){
+    var d=target-Date.now();
+    if(d<0){el.innerHTML="<p>È oggi! / ¡Es hoy!</p>";return;}
+    var dd=Math.floor(d/86400000),
+        hh=Math.floor(d%86400000/3600000),
+        mm=Math.floor(d%3600000/60000),
+        ss=Math.floor(d%60000/1000);
+    el.querySelector("[data-d]").textContent=dd;
+    el.querySelector("[data-h]").textContent=hh;
+    el.querySelector("[data-m]").textContent=mm;
+    el.querySelector("[data-s]").textContent=ss;
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Navigazione principale">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href="index.html">Lucia & Alessandro · 19.06.2027</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li><li><a href="info.html">Información</a></li><li><a href="location.html">Ubicaciones</a></li><li><a href="programa.html">Programa</a></li><li><a href="rsvp.html">RSVP</a></li><li><a href="faq.html">Preguntas</a></li><li><a href="regalos.html">Regalos</a></li><li><a href="hoteles.html">Hoteles</a></li>
+    </ul>
+    <div class="site-nav-lang" aria-label="Lingua">
+      <a href="../it/index.html">IT</a>
+      <a href="../es/index.html" class="active">ES</a>
+    </div>
+  </div>
+</nav>
+<main>
+
+<header class="hero" role="banner">
+  <div class="hero-content">
+    <h1>Lucia &amp; Alessandro</h1>
+    <h2>Nos casamos</h2>
+    <p class="hero-date">19 de Junio de 2027 · Salerno</p>
+    <p class="hero-text">Nos hace muy felices compartir con vosotros uno de los días más importantes de nuestra vida.</p>
+    <nav class="hero-buttons" aria-label="Acciones principales">
+      <a href="rsvp.html">Confirmar asistencia</a>
+      <a href="info.html">Ver detalles</a>
+    </nav>
+  </div>
+</header>
+
+<section class="save-the-date">
+  <h3>Save the Date</h3>
+  <h2>19 de Junio de 2027</h2>
+  <p>Catedral de Salerno · Masseria La Morella</p>
+  <div id="cd" class="countdown" aria-label="Cuenta atrás">
+    <div class="countdown-box"><strong data-d>–</strong><span>Días</span></div>
+    <div class="countdown-box"><strong data-h>–</strong><span>Horas</span></div>
+    <div class="countdown-box"><strong data-m>–</strong><span>Min</span></div>
+    <div class="countdown-box"><strong data-s>–</strong><span>Seg</span></div>
+  </div>
+</section>
+
+<section class="navigation">
+  <h3>Organiza tu día</h3>
+  <p>Toda la información para vivir con nosotros este día tan especial.</p>
+  <div class="nav-grid">
+    <a class="nav-card" href="location.html"><strong>📍 Ubicaciones</strong><span>Iglesia y celebración</span></a>
+    <a class="nav-card" href="programa.html"><strong>🕒 Programa</strong><span>El día paso a paso</span></a>
+    <a class="nav-card" href="rsvp.html"><strong>💌 RSVP</strong><span>Confirma tu asistencia</span></a>
+  </div>
+</section>
+
+<section class="invito">
+  <h3>Un día que queremos compartir contigo</h3>
+  <p>Tras años de momentos compartidos, risas, viajes y crecimiento juntos, hemos decidido coronar nuestro amor.</p>
+  <p>Sería una alegría inmensa contar contigo en este día tan especial.</p>
+</section>
+
+<section class="cta">
+  <h3>¿Listo para unirte a nosotros?</h3>
+  <div class="cta-buttons">
+    <a class="btn" href="location.html">Cómo llegar</a>
+    <a class="btn" href="programa.html">Programa</a>
+    <a class="btn btn-primary" href="rsvp.html">Confirmar asistencia</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <p><strong>Lucia &amp; Alessandro</strong></p>
+  <p>19 de Junio de 2027 · Salerno</p>
+  <div class="footer-links">
+    <a href="rsvp.html">RSVP</a> ·
+    <a href="info.html">Información</a> ·
+    <a href="../it/index.html">Italiano</a>
+  </div>
+</footer>
+</body>
+</html>
