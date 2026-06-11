@@ -2,17 +2,34 @@
    DESIGN TOKENS
 ========================= */
 :root {
-  --bg: #fbfaf7;
-  --bg-alt: #f6f3ee;
-  --ink: #2b2b2b;
-  --ink-soft: #555;
-  --ink-mute: #777;
-  --line: rgba(0, 0, 0, 0.06);
-  --gold: #b08d57;
-  --gold-2: #c9a66b;
-  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-  --shadow-gold: 0 10px 24px rgba(176, 141, 87, 0.28);
+  /* sfondi sabbia / tramonto */
+  --bg: #F7F3EC;          /* blanco roto */
+  --bg-alt: #F0E6D2;      /* arena chiara morbida */
+
+  /* testi */
+  --ink: #2F6F7E;         /* azul petróleo — testi titoli/scuri */
+  --ink-soft: #4a5d66;
+  --ink-mute: #7a8a90;
+  --line: rgba(47, 111, 126, 0.10);
+
+  /* accenti (ex "gold" → ora ámbar/dorado) */
+  --gold: #E89A3D;        /* ámbar cálido */
+  --gold-2: #F4C96B;      /* dorado suave */
+
+  /* accenti complementari (per dettagli, hover, badge…) */
+  --coral: #F47C6C;
+  --salmon: #F2A38A;
+  --lavender: #B7A3D9;
+  --mauve: #8F7A9E;
+  --turquoise: #4FAFB3;
+  --ultramar: #355C8C;
+  --sand: #E8D5B7;
+  --stone: #D6C1A3;
+
+  --shadow-sm: 0 6px 18px rgba(47, 111, 126, 0.07);
+  --shadow-md: 0 12px 30px rgba(47, 111, 126, 0.10);
+  --shadow-gold: 0 10px 24px rgba(232, 154, 61, 0.32);
+
   --radius: 16px;
   --radius-pill: 999px;
   --font-serif: 'Playfair Display', Georgia, serif;
