@@ -3,82 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP · Lucia & Alessandro</title>
+  <meta name="description" content="Confirma tu asistencia a la boda de Lucia y Alessandro." />
   <meta name="theme-color" content="#E89A3D" />
-  <title>RSVP · Lucía & Alessandro</title>
-  <meta name="description" content="Confirma tu asistencia a nuestra boda antes del 30 de junio de 2026." />
   <link rel="alternate" hreflang="it" href="../it/rsvp.html" />
-  <link rel="alternate" hreflang="es" href="rsvp.html" />
+  <link rel="alternate" hreflang="es" href="../es/rsvp.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a href="index.html" class="site-brand">L &amp; A</a>
-      <nav class="site-nav" aria-label="Menú principal">
-        <ul class="site-nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="info.html">Info</a></li>
-          <li><a href="location.html">Lugar</a></li>
-          <li><a href="programa.html">Programa</a></li>
-          <li><a href="rsvp.html" class="active">RSVP</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="regalos.html">Regalos</a></li>
-          <li><a href="hotel.html">Hotel</a></li>
-        </ul>
-      </nav>
-      <a href="../it/rsvp.html" class="lang-switch">IT</a>
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href="index.html">Lucia & Alessandro · 19.06.2027</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="info.html">Información</a></li>
+      <li><a href="location.html">Lugar</a></li>
+      <li><a href="programa.html">Programa</a></li>
+      <li><a href="rsvp.html" class="active">RSVP</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="regalos.html">Regalos</a></li>
+      <li><a href="hotel.html">Hotel</a></li>
+    </ul>
+    <div class="site-nav-lang" aria-label="Idioma">
+      <a href="../it/rsvp.html">IT</a>
+      <a href="../es/rsvp.html" class="active">ES</a>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="hero-eyebrow">Confirmación</p>
-        <h1 class="page-title">RSVP</h1>
-        <p class="page-lead">Por favor, confirma antes del <strong>30 de junio de 2026</strong>.</p>
-      </div>
-    </section>
+<main>
+<header class="page-header">
+  <span class="eyebrow">RSVP</span>
+  <h1>Confirma tu asistencia</h1>
+  <p>Te pedimos que confirmes antes del <strong>30 de Marzo de 2027</strong>.</p>
+</header>
 
-    <section class="section">
-      <div class="container container-narrow">
-        <form action="https://formspree.io/f/TUO_ID" method="POST" class="form">
-          <label>Nombre y apellidos
-            <input type="text" name="nombre" required />
-          </label>
-          <label>Email
-            <input type="email" name="email" required />
-          </label>
-          <label>¿Asistirás?
-            <select name="asistencia" required>
-              <option value="">Selecciona…</option>
-              <option value="si">Sí, allí estaré</option>
-              <option value="no">No podré asistir</option>
-            </select>
-          </label>
-          <label>Número de acompañantes
-            <input type="number" name="acompanantes" min="0" max="5" value="0" />
-          </label>
-          <label>Alergias o intolerancias
-            <textarea name="alergias" rows="3"></textarea>
-          </label>
-          <label>Mensaje para los novios
-            <textarea name="mensaje" rows="4"></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary">Enviar confirmación</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<section>
+  <form class="form-wrap" action="https://formspree.io/f/TUO_ID" method="POST">
+    <label for="nombre">Nombre y apellidos</label>
+    <input id="nombre" name="nombre" type="text" required />
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Lucía &amp; Alessandro · 12.09.2026</p>
-      <p><a href="rsvp.html">RSVP</a> · <a href="info.html">Info</a> · <a href="../it/index.html">Italiano</a></p>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+
+    <label for="asistencia">¿Vas a asistir?</label>
+    <select id="asistencia" name="asistencia" required>
+      <option value="">— Selecciona —</option>
+      <option value="si">Sí, allí estaré 🎉</option>
+      <option value="no">Lamentablemente no podré ir</option>
+    </select>
+
+    <label for="acompanantes">Número de acompañantes</label>
+    <input id="acompanantes" name="acompanantes" type="number" min="0" max="5" value="0" />
+
+    <label for="alergias">Alergias o intolerancias</label>
+    <textarea id="alergias" name="alergias" placeholder="Indica alergias, intolerancias o necesidades alimentarias"></textarea>
+
+    <label for="mensaje">Un mensaje para los novios (opcional)</label>
+    <textarea id="mensaje" name="mensaje"></textarea>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Enviar confirmación</button>
     </div>
-  </footer>
+    <p class="form-note">Recibirás un email de confirmación. Para cualquier duda, ¡escríbenos!</p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <p><strong>Lucia &amp; Alessandro</strong></p>
+  <p>19 de Junio de 2027 · Salerno</p>
+  <div class="footer-links">
+    <a href="rsvp.html">RSVP</a> ·
+    <a href="info.html">Información</a> ·
+    <a href="../it/index.html">Italiano</a>
+  </div>
+</footer>
 </body>
 </html>
-
