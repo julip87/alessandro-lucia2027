@@ -70,16 +70,36 @@
 
 <section class="save-the-date">
   <h3>Save the Date</h3>
-  <h2>19 de Junio de 2027</h2>
-  <p>Catedral de Salerno · Masseria La Morella</p>
-  <div id="cd" class="countdown" aria-label="Cuenta atrás">
-    <div class="countdown-box"><strong data-d>–</strong><span>Días</span></div>
+  <h2>19 Giugno 2027</h2>
+  <p>Duomo di Salerno · Masseria La Morella</p>
+  <div id="cd" class="countdown" aria-label="Countdown">
+    <div class="countdown-box"><strong data-d>–</strong><span>Dias</span></div>
     <div class="countdown-box"><strong data-h>–</strong><span>Horas</span></div>
     <div class="countdown-box"><strong data-m>–</strong><span>Min</span></div>
     <div class="countdown-box"><strong data-s>–</strong><span>Seg</span></div>
   </div>
 </section>
 
+<script>
+  (function () {
+    const target = new Date('2027-06-19T16:00:00+02:00').getTime();
+    const cd = document.getElementById('cd');
+    const d = cd.querySelector('[data-d]');
+    const h = cd.querySelector('[data-h]');
+    const m = cd.querySelector('[data-m]');
+    const s = cd.querySelector('[data-s]');
+    function tick() {
+      const diff = target - Date.now();
+      if (diff <= 0) { d.textContent=h.textContent=m.textContent=s.textContent='0'; return; }
+      d.textContent = Math.floor(diff / 86400000);
+      h.textContent = Math.floor((diff % 86400000) / 3600000);
+      m.textContent = Math.floor((diff % 3600000) / 60000);
+      s.textContent = Math.floor((diff % 60000) / 1000);
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+</script>
+  
 <section class="navigation">
   <h3>Organiza tu día</h3>
   <p>Toda la información para vivir con nosotros este día especial.</p>
