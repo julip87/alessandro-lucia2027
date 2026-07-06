@@ -79,6 +79,31 @@
     <div class="countdown-box"><strong data-s>–</strong><span>Sec</span></div>
   </div>
 </section>
+  
+<script>
+  (function () {
+    const target = new Date('2027-06-19T16:00:00+02:00').getTime();
+    const el = {
+      d: document.getElementById('cd-days'),
+      h: document.getElementById('cd-hours'),
+      m: document.getElementById('cd-minutes'),
+      s: document.getElementById('cd-seconds')
+    };
+    function tick() {
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        el.d.textContent = el.h.textContent = el.m.textContent = el.s.textContent = '0';
+        return;
+      }
+      el.d.textContent = Math.floor(diff / 86400000);
+      el.h.textContent = Math.floor((diff % 86400000) / 3600000);
+      el.m.textContent = Math.floor((diff % 3600000) / 60000);
+      el.s.textContent = Math.floor((diff % 60000) / 1000);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 
 <section class="navigation">
   <h3>Organizza la tua giornata</h3>
