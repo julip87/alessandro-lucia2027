@@ -44,27 +44,47 @@
 
 <section>
   <form class="form-wrap" id="rsvpForm">
-    <label for="nome">Nome e cognome</label>
-    <input id="nome" name="nome" type="text" required />
+<label for="nome">Nome e cognome *</label>
+<input id="nome" name="nome" type="text" required />
 
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required />
+<label for="email">Email *</label>
+<input id="email" name="email" type="email" required />
 
-    <label for="presenza">Sarai presente?</label>
-    <select id="presenza" name="presenza" required>
-      <option value="">— Seleziona —</option>
-      <option value="si">Sì, ci sarò 🎉</option>
-      <option value="no">Purtroppo non potrò esserci</option>
-    </select>
+<label for="presenza">Parteciperai al matrimonio? *</label>
+<select id="presenza" name="presenza" required>
+  <option value="">— Seleziona —</option>
+  <option value="si">Sì, con piacere! 🎉</option>
+  <option value="no">Purtroppo non potrò esserci</option>
+</select>
 
-    <label for="accompagnatori">Numero di accompagnatori</label>
-    <input id="accompagnatori" name="accompagnatori" type="number" min="0" max="5" value="0" />
+<div id="partecipazione">
 
-    <label for="allergie">Allergie o intolleranze</label>
-    <textarea id="allergie" name="allergie" placeholder="Indica eventuali allergie, intolleranze o esigenze alimentari"></textarea>
+  <label for="adulti">Numero totale degli adulti (compreso te) *</label>
+  <input id="adulti" name="adulti" type="number" min="1" max="10" value="1" required />
 
-    <label for="messaggio">Un messaggio per gli sposi (opzionale)</label>
-    <textarea id="messaggio" name="messaggio"></textarea>
+  <label for="bambini">Numero di bambini</label>
+  <input id="bambini" name="bambini" type="number" min="0" max="10" value="0" />
+
+  <label for="nomi">Nome e cognome di tutti i partecipanti</label>
+  <textarea
+      id="nomi"
+      name="nomi"
+      rows="4"
+      placeholder="Mario Rossi&#10;Giulia Bianchi&#10;Luca Rossi (6 anni)">
+  </textarea>
+
+  <label for="allergie">Allergie, intolleranze o esigenze alimentari</label>
+  <textarea
+      id="allergie"
+      name="allergie"
+      rows="4"
+      placeholder="Indica il nome della persona e la relativa esigenza alimentare.&#10;&#10;Esempio:&#10;Giulia: Celiachia&#10;Luca: Allergia alle arachidi">
+  </textarea>
+
+</div>
+
+<label for="messaggio">Un messaggio per gli sposi (facoltativo)</label>
+<textarea id="messaggio" name="messaggio" rows="4"></textarea>
 
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Invia conferma</button>
@@ -83,6 +103,22 @@
     <a href="../es/index.html">Español</a>
   </div>
 </footer>
+
+const presenza = document.getElementById("presenza");
+const partecipazione = document.getElementById("partecipazione");
+
+presenza.addEventListener("change", () => {
+
+    if (presenza.value === "no") {
+        partecipazione.style.display = "none";
+    } else {
+        partecipazione.style.display = "block";
+    }
+
+});
+
+partecipazione.style.display = "block";
+  
 <script>
 const form = document.getElementById("rsvpForm");
 
@@ -94,7 +130,9 @@ form.addEventListener("submit", async (e) => {
         nome: form.nome.value,
         email: form.email.value,
         presenza: form.presenza.value,
-        accompagnatori: form.accompagnatori.value,
+        adulti: form.adulti.value,
+        bambini: form.bambini.value,
+        nomi: form.nomi.value,
         allergie: form.allergie.value,
         messaggio: form.messaggio.value
     };
