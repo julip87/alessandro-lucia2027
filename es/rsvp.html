@@ -91,12 +91,12 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const data = {
-        nome: form.nome.value,
+        nome: form.nombre.value,
         email: form.email.value,
-        presenza: form.presenza.value,
-        accompagnatori: form.accompagnatori.value,
-        allergie: form.allergie.value,
-        messaggio: form.messaggio.value
+        presenza: form.asistencia.value,
+        accompagnatori: form.acompanantes.value,
+        allergie: form.alergias.value,
+        messaggio: form.mensaje.value
     };
 
     const response = await fetch("https://script.google.com/macros/s/AKfycbxBaFYatUV-oZB7_PssrRYklUY1sL_HJh1WhFYHMapE7RVqDfV1YY_lxfcXWYIUiBCX/exec", {
