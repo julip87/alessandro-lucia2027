@@ -105,6 +105,20 @@
 </footer>
 
 <script>
+const presenza = document.getElementById("presenza");
+const partecipazione = document.getElementById("partecipazione");
+
+presenza.addEventListener("change", () => {
+
+    if (presenza.value === "no") {
+        partecipazione.style.display = "none";
+    } else {
+        partecipazione.style.display = "block";
+    }
+
+});
+
+partecipazione.style.display = "block";
 const form = document.getElementById("rsvpForm");
 
 form.addEventListener("submit", async (e) => {
