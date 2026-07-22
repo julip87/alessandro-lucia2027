@@ -43,7 +43,7 @@
 </header>
 
 <section>
-  <form class="form-wrap" action="https://formspree.io/f/mlgqlqzr" method="POST">
+  <form class="form-wrap" id="rsvpForm">
     <label for="nombre">Nombre y apellidos</label>
     <input id="nombre" name="nombre" type="text" required />
 
@@ -83,5 +83,35 @@
     <a href="../it/index.html">Italiano</a>
   </div>
 </footer>
+<script>
+const form = document.getElementById("rsvpForm");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const data = {
+        nome: form.nome.value,
+        email: form.email.value,
+        presenza: form.presenza.value,
+        accompagnatori: form.accompagnatori.value,
+        allergie: form.allergie.value,
+        messaggio: form.messaggio.value
+    };
+
+    const response = await fetch("https://script.google.com/macros/s/AKfycbxBaFYatUV-oZB7_PssrRYklUY1sL_HJh1WhFYHMapE7RVqDfV1YY_lxfcXWYIUiBCX/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    if(response.ok){
+        alert("Gracias! Hemos recibido tu confirmacion ❤️");
+        form.reset();
+    }else{
+        alert("Errore durante l'invio.");
+    }
+
+});
+</script>  
 </body>
 </html>
