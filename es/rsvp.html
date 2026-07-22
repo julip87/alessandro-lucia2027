@@ -44,27 +44,47 @@
 
 <section>
   <form class="form-wrap" id="rsvpForm">
-    <label for="nombre">Nombre y apellidos</label>
+    <label for="nombre">Nombre y apellidos *</label>
     <input id="nombre" name="nombre" type="text" required />
 
-    <label for="email">Email</label>
+    <label for="email">Email *</label>
     <input id="email" name="email" type="email" required />
 
-    <label for="asistencia">¿Vas a asistir?</label>
+    <label for="asistencia">¿Vas a asistir a la boda? *</label>
     <select id="asistencia" name="asistencia" required>
       <option value="">— Selecciona —</option>
-      <option value="si">Sí, allí estaré 🎉</option>
+      <option value="si">¡Sí, con mucho gusto! 🎉</option>
       <option value="no">Lamentablemente no podré ir</option>
     </select>
 
-    <label for="acompanantes">Número de acompañantes</label>
-    <input id="acompanantes" name="acompanantes" type="number" min="0" max="5" value="0" />
+    <div id="participacion">
 
-    <label for="alergias">Alergias o intolerancias</label>
-    <textarea id="alergias" name="alergias" placeholder="Indica alergias, intolerancias o necesidades alimentarias"></textarea>
+      <label for="adultos">Número total de adultos (incluyéndote a ti) *</label>
+      <input id="adultos" name="adultos" type="number" min="1" max="10" value="1" required />
+
+      <label for="ninos">Número de niños</label>
+      <input id="ninos" name="ninos" type="number" min="0" max="10" value="0" />
+
+      <label for="nombres">Nombre y apellidos de todos los participantes</label>
+      <textarea
+          id="nombres"
+          name="nombres"
+          rows="4"
+          placeholder="María García&#10;Juan Pérez&#10;Lucas García (6 años)">
+      </textarea>
+
+      <label for="alergias">Alergias, intolerancias o necesidades alimentarias</label>
+      <textarea
+          id="alergias"
+          name="alergias"
+          rows="4"
+          placeholder="Indica el nombre de la persona y su necesidad alimentaria.&#10;&#10;Ejemplo:&#10;Juan: Celiquía&#10;Lucas: Alergia a los frutos secos">
+      </textarea>
+
+    </div>
 
     <label for="mensaje">Un mensaje para los novios (opcional)</label>
-    <textarea id="mensaje" name="mensaje"></textarea>
+    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
 
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Enviar confirmación</button>
@@ -80,37 +100,65 @@
   <div class="footer-links">
     <a href="rsvp.html">RSVP</a> ·
     <a href="info.html">Información</a> ·
-    <a href="../it/index.html">Italiano</a>
+    <a href="../it/rsvp.html">Italiano</a>
   </div>
 </footer>
+
 <script>
+const asistencia = document.getElementById("asistencia");
+const participacion = document.getElementById("participacion");
 const form = document.getElementById("rsvpForm");
+const inputAdultos = document.getElementById("adultos");
+
+// Gestión de visibilidad y campos requeridos
+asistencia.addEventListener("change", () => {
+    if (asistencia.value === "no") {
+        participacion.style.display = "none";
+        inputAdultos.required = false;
+        inputAdultos.value = "0";
+    } else {
+        participacion.style.display = "block";
+        inputAdultos.required = true;
+        inputAdultos.value = "1";
+    }
+});
+
+// Estado inicial
+participacion.style.display = "block";
 
 form.addEventListener("submit", async (e) => {
-
     e.preventDefault();
 
+    // Mapeo exacto de las claves que espera Google Apps Script (doPost)
     const data = {
         nome: form.nombre.value,
         email: form.email.value,
         presenza: form.asistencia.value,
-        accompagnatori: form.acompanantes.value,
+        adulti: form.adultos.value,
+        bambini: form.ninos.value,
+        nomi: form.nombres.value,
         allergie: form.alergias.value,
         messaggio: form.mensaje.value
     };
 
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxBaFYatUV-oZB7_PssrRYklUY1sL_HJh1WhFYHMapE7RVqDfV1YY_lxfcXWYIUiBCX/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-    });
+    try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxBaFYatUV-oZB7_PssrRYklUY1sL_HJh1WhFYHMapE7RVqDfV1YY_lxfcXWYIUiBCX/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
 
-    if(response.ok){
-        alert("Gracias! Hemos recibido tu confirmacion ❤️");
-        form.reset();
-    }else{
-        alert("Errore durante l'invio.");
+        if (response.ok) {
+            alert("¡Gracias! Hemos recibido tu confirmación ❤️");
+            form.reset();
+        } else {
+            alert("Ocurrió un error al enviar la confirmación. Inténtalo de nuevo.");
+        }
+    } catch (error) {
+        alert("Error de conexión. Revisa tu red e inténtalo de nuevo.");
     }
-
 });
 </script>  
 </body>
