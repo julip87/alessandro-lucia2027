@@ -4,7 +4,7 @@
 :root {
   --bg: #F8F6F2;          /* Alabastro / Seta naturale */
   --bg-alt: #EFECE4;      /* Sabbia chiarissima per sezioni alternate */
-  --card-bg: #FFFFFF;     /* Bianco per le card */
+  --card-bg: #FFFFFF;     /* Bianco morbido per le schede */
 
   /* Testi a contrasto riposante */
   --ink: #1E3245;         /* Blu Notte Profondo */
@@ -272,9 +272,9 @@ section:nth-of-type(even) {
 }
 
 /* =========================
-   NAV GRID (Home Page)
+   NAV GRID & CARDS GENERATIVE
 ========================= */
-.nav-grid {
+.nav-grid, .info-grid {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -303,6 +303,95 @@ section:nth-of-type(even) {
 .nav-card strong { font-family: var(--font-serif); font-weight: 500; font-size: 1.15rem; }
 .nav-card span { margin-top: 6px; font-size: 0.9rem; color: var(--ink-mute); }
 .nav-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--gold-2); }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  width: 280px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* =========================
+   LOCATION CARDS (Pagina Location)
+========================= */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  max-width: var(--maxw);
+  margin: 24px auto 0;
+}
+
+.location-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  max-width: 520px;
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-2);
+}
+
+.location-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.location-card-body {
+  padding: 28px;
+}
+
+.location-card h4 {
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.location-card .meta {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.location-card p {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin: 0 0 18px 0;
+  text-align: left;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.map-link:hover {
+  color: var(--gold);
+}
 
 /* =========================
    TIMELINE (Programma)
@@ -474,6 +563,21 @@ section:nth-of-type(even) {
   border-color: var(--gold);
   color: #FFFFFF;
 }
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty-state {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  border: 1px dashed var(--gold-2);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  text-align: center;
+}
+
+.empty-state .icon { font-size: 2.4rem; margin-bottom: 12px; }
 
 /* =========================
    FOOTER
