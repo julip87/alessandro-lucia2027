@@ -31,13 +31,40 @@
 * { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
+/* ==========================================
+   SFONDO GENERALE A MAIOLICA (PATTERN SUAVE)
+   ========================================== */
+
 body {
-  font-family: var(--font-sans);
-  background-color: var(--bg);
-  color: var(--ink-soft);
-  line-height: 1.8;
-  text-align: left;
-  -webkit-font-smoothing: antialiased;
+  /* URL dell'immagine del pattern chiaro su GitHub Pages */
+  background-image: url("https://julip87.github.io/alessandro-lucia2027/public/pattern.png");
+  
+  /* Ripete il pattern su tutta la pagina */
+  background-repeat: repeat;
+  
+  /* Dimensione delle singole mattonelle (200px crea la giusta proporzione) */
+  background-size: 220px auto;
+  
+  /* Mantiene lo sfondo fisso mentre si scorre la pagina (effetto parallasse molto elegante) */
+  background-attachment: fixed;
+  
+  /* Colore di ripiego mentre carica l'immagine */
+  background-color: #f9f8f3;
+}
+
+/* ==========================================
+   PROTEZIONE LEGGIBILITÀ DEI TESTI
+   ========================================== */
+
+/* Assicuriamo che le schede e le sezioni principali abbiano un fondo bianco morbido */
+.container, 
+.location-card, 
+.form-wrap, 
+.hero, 
+section {
+  background-color: rgba(255, 255, 255, 0.94); /* Bianco al 94% di opacità */
+  border-radius: 16px;
+  backdrop-filter: blur(4px); /* Effetto vetro opaco raffinato */
 }
 
 img { max-width: 100%; height: auto; display: block; }
