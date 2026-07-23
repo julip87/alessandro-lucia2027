@@ -36,62 +36,62 @@
 </nav>
 
 <main>
-<header class="page-header">
-  <span class="eyebrow">RSVP</span>
-  <h1>Conferma la tua presenza</h1>
-  <p>Ti chiediamo di confermare entro il <strong>30 Marzo 2027</strong>.</p>
-</header>
+  <header class="page-header">
+    <span class="eyebrow">RSVP</span>
+    <h1>Conferma la tua presenza</h1>
+    <p>Ti chiediamo di confermare entro il <strong>30 Marzo 2027</strong>.</p>
+  </header>
 
-<section>
-  <form class="form-wrap" id="rsvpForm">
-<label for="nome">Nome e cognome *</label>
-<input id="nome" name="nome" type="text" required />
+  <section>
+    <!-- AGGIUNTA LA CLASSE tile-pattern-bg QUI SOTTO -->
+    <form class="form-wrap tile-pattern-bg" id="rsvpForm">
+      
+      <label for="nome">Nome e cognome *</label>
+      <input id="nome" name="nome" type="text" required />
 
-<label for="email">Email *</label>
-<input id="email" name="email" type="email" required />
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required />
 
-<label for="presenza">Parteciperai al matrimonio? *</label>
-<select id="presenza" name="presenza" required>
-  <option value="">— Seleziona —</option>
-  <option value="si">Sì, con piacere! 🎉</option>
-  <option value="no">Purtroppo non potrò esserci</option>
-</select>
+      <label for="presenza">Parteciperai al matrimonio? *</label>
+      <select id="presenza" name="presenza" required>
+        <option value="">— Seleziona —</option>
+        <option value="si">Sì, con piacere! 🎉</option>
+        <option value="no">Purtroppo non potrò esserci</option>
+      </select>
 
-<div id="partecipazione">
+      <div id="partecipazione">
+        <label for="adulti">Numero totale degli adulti (compreso te) *</label>
+        <input id="adulti" name="adulti" type="number" min="1" max="10" value="1" required />
 
-  <label for="adulti">Numero totale degli adulti (compreso te) *</label>
-  <input id="adulti" name="adulti" type="number" min="1" max="10" value="1" required />
+        <label for="bambini">Numero di bambini</label>
+        <input id="bambini" name="bambini" type="number" min="0" max="10" value="0" />
 
-  <label for="bambini">Numero di bambini</label>
-  <input id="bambini" name="bambini" type="number" min="0" max="10" value="0" />
+        <label for="nomi">Nome e cognome di tutti i partecipanti</label>
+        <textarea
+            id="nomi"
+            name="nomi"
+            rows="4"
+            placeholder="Mario Rossi&#10;Giulia Bianchi&#10;Luca Rossi (6 anni)">
+        </textarea>
 
-  <label for="nomi">Nome e cognome di tutti i partecipanti</label>
-  <textarea
-      id="nomi"
-      name="nomi"
-      rows="4"
-      placeholder="Mario Rossi&#10;Giulia Bianchi&#10;Luca Rossi (6 anni)">
-  </textarea>
+        <label for="allergie">Allergie, intolleranze o esigenze alimentari</label>
+        <textarea
+            id="allergie"
+            name="allergie"
+            rows="4"
+            placeholder="Indica il nome della persona e la relativa esigenza alimentare.&#10;&#10;Esempio:&#10;Giulia: Celiachia&#10;Luca: Allergia alle arachidi">
+        </textarea>
+      </div>
 
-  <label for="allergie">Allergie, intolleranze o esigenze alimentari</label>
-  <textarea
-      id="allergie"
-      name="allergie"
-      rows="4"
-      placeholder="Indica il nome della persona e la relativa esigenza alimentare.&#10;&#10;Esempio:&#10;Giulia: Celiachia&#10;Luca: Allergia alle arachidi">
-  </textarea>
+      <label for="messaggio">Un messaggio per gli sposi (facoltativo)</label>
+      <textarea id="messaggio" name="messaggio" rows="4"></textarea>
 
-</div>
-
-<label for="messaggio">Un messaggio per gli sposi (facoltativo)</label>
-<textarea id="messaggio" name="messaggio" rows="4"></textarea>
-
-    <div class="form-actions">
-      <button type="submit" class="btn btn-primary">Invia conferma</button>
-    </div>
-    <p class="form-note">Riceverai una mail di conferma. Per dubbi, scrivici!</p>
-  </form>
-</section>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Invia conferma</button>
+      </div>
+      <p class="form-note">Riceverai una mail di conferma. Per dubbi, scrivici!</p>
+    </form>
+  </section>
 </main>
 
 <footer>
