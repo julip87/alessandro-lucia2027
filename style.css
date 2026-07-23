@@ -36,32 +36,29 @@ html { scroll-behavior: smooth; }
    ========================================== */
 
 body {
-  /* URL dell'immagine del pattern chiaro su GitHub Pages */
-  background-image: url("https://julip87.github.io/alessandro-lucia2027/public/pattern.png");
-  
-  /* Ripete il pattern su tutta la pagina */
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+
+  /* Sfondo a maiolica continuo con velatura chiarissima (suave) integrata */
+  background-image: linear-gradient(rgba(248, 246, 242, 0.85), rgba(248, 246, 242, 0.85)), 
+                    url("https://julip87.github.io/alessandro-lucia2027/public/pattern.png");
   background-repeat: repeat;
-  
-  /* Dimensione delle singole mattonelle (200px crea la giusta proporzione) */
   background-size: 220px auto;
-  
-  /* Mantiene lo sfondo fisso mentre si scorre la pagina (effetto parallasse molto elegante) */
   background-attachment: fixed;
-  
-  /* Colore di ripiego mentre carica l'immagine */
-  background-color: #f9f8f3;
+
+  color: var(--ink-soft);
+  line-height: 1.8;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================
    PROTEZIONE LEGGIBILITÀ DEI TESTI
    ========================================== */
 
-/* Assicuriamo che le schede e le sezioni principali abbiano un fondo bianco morbido */
 .container, 
 .location-card, 
-.form-wrap, 
-.hero, 
-section {
+.form-wrap {
   background-color: rgba(255, 255, 255, 0.94); /* Bianco al 94% di opacità */
   border-radius: 16px;
   backdrop-filter: blur(4px); /* Effetto vetro opaco raffinato */
@@ -96,8 +93,9 @@ section {
   text-align: center;
 }
 
+/* Sfondo traslucido per le sezioni alternate per far passare la maiolica */
 section:nth-of-type(even) { 
-  background-color: var(--bg-alt); 
+  background-color: rgba(239, 236, 228, 0.4); 
 }
 
 /* =========================
@@ -238,7 +236,7 @@ section:nth-of-type(even) {
    COUNTDOWN (Home Page)
 ========================= */
 .save-the-date {
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .countdown {
@@ -282,7 +280,7 @@ section:nth-of-type(even) {
 .page-header {
   text-align: center;
   padding: clamp(50px, 7vw, 80px) 20px clamp(25px, 4vw, 40px);
-  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, rgba(239, 236, 228, 0.4) 0%, rgba(248, 246, 242, 0.1) 100%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -694,7 +692,7 @@ footer .footer-links a { color: var(--gold-2); text-decoration: none; margin: 0 
   display: inline-block;
 }
 
-/* 3. Separatore Elegant con Mattonella */
+/* 3. Separatore Elegante con Mattonella */
 .tile-divider {
   display: flex;
   align-items: center;
