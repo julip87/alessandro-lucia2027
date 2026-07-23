@@ -695,7 +695,7 @@ footer .footer-links a { color: var(--gold-2); text-decoration: none; margin: 0 
 /* 4. Sfondo Filigrana Maiolica per il Form RSVP */
 .tile-pattern-bg {
   position: relative;
-  background-image: url('https://julip87.github.io/alessandro-lucia2027/public/maiolica-limoni.jpg');
+  background-image: url('https://julip87.github.io/alessandro-lucia2027/public/maiolica-limoni.jpeg');
   background-repeat: repeat;
   background-size: 260px 260px;
   padding: 50px 20px;
