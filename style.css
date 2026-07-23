@@ -1,26 +1,26 @@
 /* =========================
-   DESIGN TOKENS (Mediterraneo Elegante)
+   DESIGN TOKENS (Pietra & Lino - Riposante per gli occhi)
 ========================= */
 :root {
-  /* Sfondi caldi e naturali */
-  --bg: #FDFCF8;          /* Avorio caldo, morbido e luminoso */
-  --bg-alt: #F4EFE6;      /* Sabbia chiara/Pietra naturale */
+  /* Sfondi riposanti (zero bagliore/glare) */
+  --bg: #EFEADF;          /* Lino chiaro / Pietra naturale desaturata */
+  --bg-alt: #E3DACB;      /* Sabbia calda e morbida per sezioni alternate */
+  --card-bg: #F7F4EC;     /* Crema delicato per le schede (Niente bianco puro!) */
 
-  /* Testi e tonalità primarie */
-  --ink: #1B365D;         /* Blu Mare Profondo (Ispirato alle maioliche scure) */
-  --ink-soft: #42556A;    /* Testo di lettura, morbido ed elegante */
-  --ink-mute: #728294;    /* Dettagli secondari e date */
-  --line: rgba(27, 54, 93, 0.10); /* Linee divisorie sottili */
+  /* Testi a contrasto morbido */
+  --ink: #1B2D3E;         /* Blu Notte Ardesia (leggibile, mai duro) */
+  --ink-soft: #3E5162;    /* Testo di lettura piacevole e rilassante */
+  --ink-mute: #6C7D8C;    /* Dettagli secondari */
+  --line: rgba(27, 45, 62, 0.12); /* Linee sottili di struttura */
 
-  /* Accenti raffinati */
-  --gold: #C69A52;        /* Oro Champagne / Zafferano tenue */
-  --gold-2: #E8D3A7;      /* Oro morbido di sfondo */
-  --olive: #6A7B58;       /* Verde Ulivo (accento botanico) */
+  /* Accenti caldi e naturali */
+  --gold: #B88944;        /* Oro antico / Terra di Siena */
+  --gold-2: #D8BD8A;      /* Accento morbido */
+  --olive: #5A6B48;       /* Verde Ulivo per tocchi botanici */
 
-  /* Ombre e bordi raffinati */
-  --shadow-sm: 0 4px 20px rgba(27, 54, 93, 0.05);
-  --shadow-md: 0 10px 30px rgba(27, 54, 93, 0.08);
-  --shadow-gold: 0 8px 20px rgba(198, 154, 82, 0.25);
+  /* Ombre morbide e naturali */
+  --shadow-sm: 0 4px 16px rgba(27, 45, 62, 0.04);
+  --shadow-md: 0 8px 24px rgba(27, 45, 62, 0.07);
 
   --radius: 12px;
   --radius-pill: 999px;
@@ -29,331 +29,58 @@
   --maxw: 1040px;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
+/* =========================
+   Sfondo Globale
+========================= */
 body {
   font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--ink-soft);
   line-height: 1.8;
-  text-align: left; /* Migliora la leggibilità globale */
+  text-align: left;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; }
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-h1, h2, h3, h4 { 
-  font-family: var(--font-serif); 
-  font-weight: 500; 
-  color: var(--ink); 
-  line-height: 1.25;
-}
-
-h1 { font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -0.01em; }
-h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
-h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 18px; }
-h4 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; }
-
-p {
-  max-width: 680px;
-  margin-bottom: 16px;
-  font-size: 1.05rem;
-}
-
-/* Separatore decorativo opzionale */
-.divider {
-  width: 50px;
-  height: 1px;
-  background-color: var(--gold);
-  margin: 25px auto;
 }
 
 /* =========================
-   SITE NAV (globale)
+   CARDS (Senza Bianco Accecante)
 ========================= */
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(253, 252, 248, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
-}
-
-.site-nav-inner {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 16px 20px;
-}
-
-.site-nav-brand {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  color: var(--ink);
-  white-space: nowrap;
-  font-weight: 600;
-}
-
-.site-nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 22px;
-  justify-content: center;
-  list-style: none;
-}
-
-.site-nav-links a {
-  text-decoration: none;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
-  padding: 4px 0;
-  border-bottom: 1.5px solid transparent;
-  transition: all 0.25s ease;
-}
-
-.site-nav-links a:hover { color: var(--ink); }
-.site-nav-links a.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 500; }
-
-.site-nav-lang {
-  display: inline-flex;
-  gap: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.site-nav-lang a {
-  text-decoration: none;
-  color: var(--ink-mute);
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--line);
-  transition: all 0.2s ease;
-}
-
-.site-nav-lang a.active { 
-  background: var(--ink); 
-  color: #fff; 
-  border-color: var(--ink); 
-}
-
-@media (max-width: 768px) {
-  .site-nav-inner { flex-direction: column; gap: 10px; padding: 12px 14px; text-align: center; }
-  .site-nav-links { gap: 4px 14px; }
-  .site-nav-links a { font-size: 0.85rem; }
-}
-
-/* =========================
-   PAGE HEADER (pagine interne)
-========================= */
-.page-header {
-  text-align: center;
-  padding: clamp(60px, 8vw, 90px) 20px clamp(30px, 4vw, 45px);
-  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
-  border-bottom: 1px solid var(--line);
-}
-
-.page-header h1 { margin-bottom: 12px; }
-
-.page-header p {
-  margin: 0 auto;
-  color: var(--ink-soft);
-}
-
-.page-header .eyebrow {
-  display: inline-block;
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-section { 
-  padding: clamp(50px, 7vw, 85px) 20px; 
-  text-align: center;
-}
-
-section p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section:nth-of-type(even) { 
-  background-color: var(--bg-alt); 
-}
-
-/* =========================
-   CARDS & LOCATION
-========================= */
-.cards-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  justify-content: center;
-  max-width: var(--maxw);
-  margin: 32px auto 0;
-}
-
+.card, 
 .location-card {
-  background: #FFFFFF;
+  background-color: var(--card-bg); /* Niente #FFFFFF */
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  max-width: 480px;
-  width: 100%;
-  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .location-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-}
-
-.location-card img { 
-  width: 100%; 
-  height: 260px; 
-  object-fit: cover; 
-}
-
-.location-card-body { 
-  padding: 28px; 
-}
-
-.location-card h4 { 
-  font-size: 1.35rem; 
-  color: var(--ink); 
-}
-
-.location-card .meta { 
-  color: var(--gold); 
-  font-size: 0.9rem; 
-  font-weight: 500;
-  margin-bottom: 12px; 
-}
-
-.location-card p {
-  font-size: 0.98rem;
-  color: var(--ink-soft);
-  margin-bottom: 18px;
-}
-
-.location-card .map-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
-  transition: color 0.2s;
-}
-
-.location-card .map-link:hover {
-  color: var(--gold);
+  border-color: var(--gold-2);
 }
 
 /* =========================
-   BUTTONS
+   PULSANTI
 ========================= */
-.cta-buttons {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
-  margin-top: 24px;
-}
-
 .btn {
   display: inline-block;
   padding: 12px 28px;
   text-decoration: none;
   color: var(--ink);
-  background: #FFFFFF;
+  background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
   font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn:hover { 
-  transform: translateY(-2px); 
-  box-shadow: var(--shadow-md); 
-  border-color: var(--gold);
 }
 
 .btn-primary {
   color: #FFFFFF;
   background: var(--ink);
-  border: 1px solid var(--ink);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--ink);
 }
 
-.btn-primary:hover { 
+.btn-primary:hover {
   background: var(--gold);
   border-color: var(--gold);
-  color: #FFFFFF;
-  box-shadow: var(--shadow-gold);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  padding: 60px 20px;
-  background: var(--ink);
-  color: #E2E8F0;
-  text-align: center;
-}
-
-footer p { 
-  color: #E2E8F0; 
-  margin: 4px auto; 
-}
-
-footer strong {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: #FFFFFF;
-}
-
-footer .footer-links { 
-  margin-top: 20px; 
-  font-size: 0.88rem; 
-}
-
-footer .footer-links a { 
-  color: var(--gold-2); 
-  text-decoration: none; 
-  margin: 0 10px; 
-  transition: opacity 0.2s;
-}
-
-footer .footer-links a:hover {
-  opacity: 0.8;
 }
