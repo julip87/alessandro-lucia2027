@@ -13,64 +13,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-<style>
-  /* Scheda del selettore */
-  .lang-card {
-    max-width: 520px;
-    width: 100%;
-    text-align: center;
-    background: #FFFFFF;
-    padding: 50px 30px;
-    border-radius: var(--radius);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-sm);
-  }
+  <style>
+    /* Contenitore a tutto schermo per centrare la scheda verticalmente e orizzontalmente */
+    .lang-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-  /* Data "19 · 06 · 2027" */
-  .lang-eyebrow {
-    color: var(--gold); /* #D6C1A3 Sabbia Dorata */
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    font-size: .85rem;
-    font-weight: 600;
-    margin-bottom: 18px;
-  }
+    /* Scheda del selettore */
+    .lang-card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      padding: 50px 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+    }
 
-  /* Titolo "Lucia & Alessandro" in TURCHESE */
-  .lang-card h1 {
-    font-family: var(--font-serif);
-    color: var(--ink); /* #4FAFB3 Turchese */
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    margin-bottom: 12px;
-  }
+    /* Data "19 · 06 · 2027" */
+    .lang-eyebrow {
+      color: var(--gold);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
 
-  /* Sottotitolo "Scegli la tua lingua..." */
-  .lang-card .sub {
-    color: var(--ink-soft); /* #355C8C Blu Oceano riposante */
-    margin-bottom: 32px;
-    font-size: 1rem;
-  }
+    /* Titolo "Lucia & Alessandro" in TURCHESE */
+    .lang-card h1 {
+      font-family: var(--font-serif);
+      color: var(--ink);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 12px;
+    }
 
-  /* Bottoni della pagina selettrice */
-  .lang-buttons .btn-primary {
-    background-color: var(--ink); /* Fondo Turchese */
-    border-color: var(--ink);
-    color: #FFFFFF;
-  }
+    /* Sottotitolo "Scegli la tua lingua..." */
+    .lang-card .sub {
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
 
-  .lang-buttons .btn-primary:hover {
-    background-color: var(--gold);
-    border-color: var(--gold);
-    color: var(--ink-soft);
-  }
+    /* Disposizione affiancata dei bottoni */
+    .lang-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-  .lang-buttons .btn {
-    background-color: #FFFFFF;
-    color: var(--ink-soft);
-    border: 1px solid var(--line);
-  }
-</style>
-</style>
+    /* Bottoni della pagina selettrice */
+    .lang-buttons .btn-primary {
+      background-color: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+    }
+
+    .lang-buttons .btn-primary:hover {
+      background-color: var(--gold);
+      border-color: var(--gold);
+      color: var(--ink-soft);
+    }
+
+    .lang-buttons .btn {
+      background-color: #FFFFFF;
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+    }
+  </style>
 </head>
 <body>
   <main class="lang-wrap">
