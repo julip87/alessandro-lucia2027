@@ -184,24 +184,30 @@ section:nth-of-type(even) {
 ========================= */
 
 .hero {
-  min-height: 50vh; /* Ridotta da 85vh a 50vh per occupare meno spazio in altezza */
-  padding: 50px 20px; /* Mantiene lo spazio di sicurezza sopra e sotto */
+  min-height: 50vh;
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   color: #fff;
-  background-image: url("https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80");
-  background-size: cover;
-  background-position: center;
+  
+  /* Sfondo con pattern ripetuto */
+  background-image: url("https://julip87.github.io/alessandro-lucia2027/public/pattern2.JPG");
+  background-repeat: repeat;
+  background-size: 220px; /* Regola questo valore per rimpicciolire/ingrandire le mattonelle */
+  background-position: top left;
+  
   text-align: center;
   isolation: isolate;
 }
 
+/* Velo turchese semi-trasparente per proteggere la leggibilità del testo bianco */
 .hero::before {
   content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(53, 92, 140, 0.55) 0%, rgba(53, 92, 140, 0.35) 60%, rgba(53, 92, 140, 0.65) 100%);
+  position: absolute; 
+  inset: 0;
+  background: linear-gradient(180deg, rgba(53, 92, 140, 0.75) 0%, rgba(53, 92, 140, 0.65) 100%);
   z-index: -1;
 }
 
