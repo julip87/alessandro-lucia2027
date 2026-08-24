@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Contenitore a tutto schermo per centrare la scheda verticalmente e orizzontalmente */
+    /* Contenitore a tutto schermo per centrare la scheda */
     .lang-wrap {
       min-height: 100vh;
       display: flex;
@@ -46,7 +46,7 @@
       margin-bottom: 18px;
     }
 
-    /* Titolo "Lucia & Alessandro" in TURCHESE */
+    /* Titolo "Lucia & Alessandro" in Turchese */
     .lang-card h1 {
       font-family: var(--font-serif);
       color: var(--ink);
@@ -54,14 +54,14 @@
       margin-bottom: 12px;
     }
 
-    /* Sottotitolo "Scegli la tua lingua..." */
+    /* Sottotitolo */
     .lang-card .sub {
       color: var(--ink-soft);
       margin-bottom: 32px;
       font-size: 1rem;
     }
 
-    /* Disposizione affiancata dei bottoni */
+    /* Disposizione e allineamento bottoni */
     .lang-buttons {
       display: flex;
       gap: 12px;
@@ -69,7 +69,25 @@
       flex-wrap: wrap;
     }
 
-    /* Bottoni della pagina selettrice */
+    .lang-buttons .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: #FFFFFF;
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+      transition: all 0.25s ease;
+    }
+
+    /* Hover Bottone Secondario (Spagnolo) */
+    .lang-buttons .btn:not(.btn-primary):hover {
+      background-color: var(--bg-alt);
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    /* Bottone Primario (Italiano) */
     .lang-buttons .btn-primary {
       background-color: var(--ink);
       border-color: var(--ink);
@@ -82,10 +100,13 @@
       color: var(--ink-soft);
     }
 
-    .lang-buttons .btn {
-      background-color: #FFFFFF;
-      color: var(--ink-soft);
-      border: 1px solid var(--line);
+    /* Stile Bandiere Vettoriali SVG */
+    .flag-icon {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      box-shadow: 0 0 1px rgba(0,0,0,0.3);
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -96,8 +117,22 @@
       <h1>Lucia &amp; Alessandro</h1>
       <p class="sub">Scegli la tua lingua · Elige tu idioma</p>
       <div class="lang-buttons">
-        <a class="btn btn-primary" href="it/index.html">🇮🇹 Italiano</a>
-        <a class="btn" href="es/index.html">🇪🇸 Español</a>
+        <a class="btn btn-primary" href="it/index.html">
+          <svg class="flag-icon" viewBox="0 0 30 20">
+            <rect width="10" height="20" x="0" fill="#009246"/>
+            <rect width="10" height="20" x="10" fill="#ffffff"/>
+            <rect width="10" height="20" x="20" fill="#ce2b37"/>
+          </svg>
+          Italiano
+        </a>
+        <a class="btn" href="es/index.html">
+          <svg class="flag-icon" viewBox="0 0 30 20">
+            <rect width="30" height="5" y="0" fill="#AA151B"/>
+            <rect width="30" height="10" y="5" fill="#F1BF00"/>
+            <rect width="30" height="5" y="15" fill="#AA151B"/>
+          </svg>
+          Español
+        </a>
       </div>
     </div>
   </main>
