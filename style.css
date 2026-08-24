@@ -6,19 +6,19 @@
   --bg-alt: #EFECE4;      /* Sabbia chiarissima per sezioni alternate */
   --card-bg: #FFFFFF;     /* Bianco morbido per le schede */
 
-  /* Testi a contrasto riposante */
-  --ink: #1E3245;         /* Blu Notte Profondo */
-  --ink-soft: #42556A;    /* Testo di lettura principale */
-  --ink-mute: #788896;    /* Dettagli e numeri secondari */
-  --line: rgba(30, 50, 69, 0.12); /* Linee sottili */
+  /* Testi a contrasto */
+  --ink: #4FAFB3;         /* Azzurro Turchese / Titoli e risalti */
+  --ink-soft: #355C8C;    /* Blu Oceano / Testo di lettura principale */
+  --ink-mute: #F2A38A;    /* Pesca Caldo / Dettagli e elementi secondari */
+  --line: rgba(79, 175, 179, 0.12); /* Linee sottili coordinate a --ink */
 
   /* Accenti */
-  --gold: #C59B27;        /* Oro caldo / Miele */
-  --gold-2: #E8D3A7;      /* Oro morbido */
+  --gold: #D6C1A3;        /* Sabbia Dorata / Bottoni e dettagli */
+  --gold-2: #D6C1A3;      /* Sabbia Dorata morbida */
 
   /* Ombre */
-  --shadow-sm: 0 4px 16px rgba(30, 50, 69, 0.05);
-  --shadow-md: 0 10px 28px rgba(30, 50, 69, 0.08);
+  --shadow-sm: 0 4px 16px rgba(53, 92, 140, 0.05);
+  --shadow-md: 0 10px 28px rgba(53, 92, 140, 0.08);
 
   --radius: 12px;
   --radius-pill: 999px;
