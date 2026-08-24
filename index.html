@@ -14,14 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 <style>
-  .lang-wrap {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    background: transparent;
-  }
+  /* Scheda del selettore */
   .lang-card {
     max-width: 520px;
     width: 100%;
@@ -32,30 +25,51 @@
     border: 1px solid var(--line);
     box-shadow: var(--shadow-sm);
   }
+
+  /* Data "19 · 06 · 2027" */
   .lang-eyebrow {
-    color: var(--gold);
+    color: var(--gold); /* #D6C1A3 Sabbia Dorata */
     letter-spacing: .3em;
     text-transform: uppercase;
     font-size: .85rem;
     font-weight: 600;
     margin-bottom: 18px;
   }
+
+  /* Titolo "Lucia & Alessandro" in TURCHESE */
   .lang-card h1 {
     font-family: var(--font-serif);
+    color: var(--ink); /* #4FAFB3 Turchese */
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     margin-bottom: 12px;
   }
+
+  /* Sottotitolo "Scegli la tua lingua..." */
   .lang-card .sub {
-    color: var(--ink-soft);
+    color: var(--ink-soft); /* #355C8C Blu Oceano riposante */
     margin-bottom: 32px;
     font-size: 1rem;
   }
-  .lang-buttons {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
+
+  /* Bottoni della pagina selettrice */
+  .lang-buttons .btn-primary {
+    background-color: var(--ink); /* Fondo Turchese */
+    border-color: var(--ink);
+    color: #FFFFFF;
   }
+
+  .lang-buttons .btn-primary:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink-soft);
+  }
+
+  .lang-buttons .btn {
+    background-color: #FFFFFF;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+  }
+</style>
 </style>
 </head>
 <body>
