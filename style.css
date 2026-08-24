@@ -182,9 +182,7 @@ section:nth-of-type(even) {
 /* =========================
    HERO (Home Page)
 ========================= */
-/* =========================
-   HERO (Home Page)
-========================= */
+
 .hero {
   min-height: 50vh; /* Ridotta da 85vh a 50vh per occupare meno spazio in altezza */
   padding: 50px 20px; /* Mantiene lo spazio di sicurezza sopra e sotto */
