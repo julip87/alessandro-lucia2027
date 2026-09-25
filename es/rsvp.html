@@ -39,12 +39,12 @@
 <header class="page-header">
   <span class="eyebrow">RSVP</span>
   <h1>Confirma tu asistencia</h1>
-  <p>Te pedimos que confirmes antes del <strong>30 de Marzo de 2027</strong>.</p>
+  <p>Te pedimos que confirmes antes del <strong>30 de Marzo de 2027</strong>.<br><small>Por favor, completa un formulario individual por cada invitado.</small></p>
 </header>
 
 <!-- SEPARATORE CON MATTONELLA -->
 <div class="tile-divider">
-  <img src="https://julip87.github.io/alessandro-lucia2027/public/tile-limone-ico.jpg" alt="Decorazione">
+  <img src="https://julip87.github.io/alessandro-lucia2027/public/tile-limone-ico.jpg" alt="Decoración">
 </div>
   
 <section>
@@ -55,6 +55,9 @@
     <label for="email">Email *</label>
     <input id="email" name="email" type="email" required />
 
+    <label for="telefono">Teléfono / WhatsApp *</label>
+    <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000" required />
+
     <label for="asistencia">¿Vas a asistir a la boda? *</label>
     <select id="asistencia" name="asistencia" required>
       <option value="">— Selecciona —</option>
@@ -64,27 +67,40 @@
 
     <div id="participacion">
 
-      <label for="adultos">Número total de adultos (incluyéndote a ti) *</label>
-      <input id="adultos" name="adultos" type="number" min="1" max="10" value="1" required />
-
-      <label for="ninos">Número de niños</label>
-      <input id="ninos" name="ninos" type="number" min="0" max="10" value="0" />
-
-      <label for="nombres">Nombre y apellidos de todos los participantes</label>
-      <textarea
-          id="nombres"
-          name="nombres"
-          rows="4"
-          placeholder="María García&#10;Juan Pérez&#10;Lucas García (6 años)">
-      </textarea>
+      <label for="menu">Menú para la cena *</label>
+      <select id="menu" name="menu">
+        <option value="">— Selecciona tu menú —</option>
+        <option value="normal">Menú Normal</option>
+        <option value="vegetariano">Menú Vegetariano</option>
+        <option value="vegano">Menú Vegano</option>
+        <option value="infantil">Menú Infantil (Niños)</option>
+      </select>
 
       <label for="alergias">Alergias, intolerancias o necesidades alimentarias</label>
       <textarea
           id="alergias"
           name="alergias"
-          rows="4"
-          placeholder="Indica el nombre de la persona y su necesidad alimentaria.&#10;&#10;Ejemplo:&#10;Juan: Celiquía&#10;Lucas: Alergia a los frutos secos">
+          rows="3"
+          placeholder="Indica cualquier alergia, celiaquía o intolerancia...">
       </textarea>
+
+      <label for="transporte">¿Necesitas servicio de autobús / transporte? *</label>
+      <select id="transporte" name="transporte">
+        <option value="">— Selecciona —</option>
+        <option value="si">Sí, lo necesito</option>
+        <option value="no">No, iré por mi cuenta</option>
+      </select>
+
+      <label for="alojamiento_fuera">¿Vienes de fuera y dónde te alojas?</label>
+      <input id="alojamiento_fuera" name="alojamiento_fuera" type="text" placeholder="Ej: Vengo de Madrid y me alojaré en el Hotel Salerno..." />
+
+      <label for="masseria">¿Te gustaría quedarte a dormir la noche de la boda en Masseria La Morella? *</label>
+      <small style="display:block; margin-top:-4px; margin-bottom:8px; color:var(--ink-soft); font-size:0.85rem;">Nota: Sujeto a disponibilidad de plazas.</small>
+      <select id="masseria" name="masseria">
+        <option value="">— Selecciona —</option>
+        <option value="si">Sí, me gustaría (sujeto a disponibilidad)</option>
+        <option value="no">No, gracias</option>
+      </select>
 
     </div>
 
@@ -113,37 +129,47 @@
 const asistencia = document.getElementById("asistencia");
 const participacion = document.getElementById("participacion");
 const form = document.getElementById("rsvpForm");
-const inputAdultos = document.getElementById("adultos");
+
+const menu = document.getElementById("menu");
+const transporte = document.getElementById("transporte");
+const masseria = document.getElementById("masseria");
 
 // Gestión de visibilidad y campos requeridos
 asistencia.addEventListener("change", () => {
     if (asistencia.value === "no") {
         participacion.style.display = "none";
-        inputAdultos.required = false;
-        inputAdultos.value = "0";
+        menu.required = false;
+        transporte.required = false;
+        masseria.required = false;
     } else {
         participacion.style.display = "block";
-        inputAdultos.required = true;
-        inputAdultos.value = "1";
+        menu.required = true;
+        transporte.required = true;
+        masseria.required = true;
     }
 });
 
 // Estado inicial
 participacion.style.display = "block";
+menu.required = true;
+transporte.required = true;
+masseria.required = true;
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Mapeo exacto de las claves que espera Google Apps Script (doPost)
+    // Mapeo de claves enviado a Google Apps Script
     const data = {
-        nome: form.nombre.value,
+        nombre: form.nombre.value,
         email: form.email.value,
-        presenza: form.asistencia.value,
-        adulti: form.adultos.value,
-        bambini: form.ninos.value,
-        nomi: form.nombres.value,
-        allergie: form.alergias.value,
-        messaggio: form.mensaje.value
+        telefono: form.telefono.value,
+        asistencia: form.asistencia.value,
+        menu: form.menu.value,
+        alergias: form.alergias.value,
+        transporte: form.transporte.value,
+        alojamiento_fuera: form.alojamiento_fuera.value,
+        masseria: form.masseria.value,
+        mensaje: form.mensaje.value
     };
 
     try {
