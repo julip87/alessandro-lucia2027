@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><!-- TITLE PAGINA --> · Lucia & Alessandro</title>
-  <meta name="description" content="<!-- DESCRIZIONE PAGINA -->" />
+  <title>RSVP · Lucia & Alessandro</title>
+  <meta name="description" content="Conferma la tua presenza al matrimonio di Lucia e Alessandro." />
   <meta name="theme-color" content="#E89A3D" />
-  <link rel="alternate" hreflang="it" href="../it/index.html" />
-  <link rel="alternate" hreflang="es" href="../es/index.html" />
+  <link rel="alternate" hreflang="it" href="../it/rsvp.html" />
+  <link rel="alternate" hreflang="es" href="../es/rsvp.html" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,74 +29,82 @@
       <li><a href="hotel.html">Hotel</a></li>
     </ul>
     <div class="site-nav-lang" aria-label="Lingua">
-      <a href="../it/index.html" class="active">IT</a>
-      <a href="../es/index.html">ES</a>
+      <a href="../it/rsvp.html" class="active">IT</a>
+      <a href="../es/rsvp.html">ES</a>
     </div>
   </div>
 </nav>
 
 <main>
-  <header class="page-header">
-    <span class="eyebrow">RSVP</span>
-    <h1>Conferma la tua presenza</h1>
-    <p>Ti chiediamo di confermare entro il <strong>30 Marzo 2027</strong>.</p>
-  </header>
+<header class="page-header">
+  <span class="eyebrow">RSVP</span>
+  <h1>Conferma la tua presenza</h1>
+  <p>Ti chiediamo di confermare entro il <strong>30 Marzo 2027</strong>.<br><small>Per favore, completa un modulo individuale per ciascun invitato.</small></p>
+</header>
 
 <!-- SEPARATORE CON MATTONELLA -->
 <div class="tile-divider">
   <img src="https://julip87.github.io/alessandro-lucia2027/public/tile-limone-ico.jpg" alt="Decorazione">
 </div>
   
-  <section>
-    <!-- AGGIUNTA LA CLASSE tile-pattern-bg QUI SOTTO -->
-    <form class="form-wrap" id="rsvpForm">
-      
-      <label for="nome">Nome e cognome *</label>
-      <input id="nome" name="nome" type="text" required />
+<section>
+  <form class="form-wrap" id="rsvpForm">
+    <label for="nome">Nome e cognome *</label>
+    <input id="nome" name="nome" type="text" required />
 
-      <label for="email">Email *</label>
-      <input id="email" name="email" type="email" required />
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" required />
 
-      <label for="presenza">Parteciperai al matrimonio? *</label>
-      <select id="presenza" name="presenza" required>
-        <option value="">— Seleziona —</option>
-        <option value="si">Sì, con piacere! 🎉</option>
-        <option value="no">Purtroppo non potrò esserci</option>
+    <label for="telefono">Telefono / WhatsApp *</label>
+    <input id="telefono" name="telefono" type="tel" placeholder="+39 333 000 0000" required />
+
+    <label for="presenza">Parteciperai al matrimonio? *</label>
+    <select id="presenza" name="presenza" required>
+      <option value="">— Seleziona —</option>
+      <option value="si">Sì, con piacere! 🎉</option>
+      <option value="no">Purtroppo non potrò esserci</option>
+    </select>
+
+    <div id="partecipazione">
+
+      <label for="menu">Menù per la cena *</label>
+      <select id="menu" name="menu">
+        <option value="">— Seleziona il tuo menù —</option>
+        <option value="normal">Menù Normale</option>
+        <option value="vegetariano">Menù Vegetariano</option>
+        <option value="vegano">Menù Vegano</option>
+        <option value="infantil">Menù Bambini</option>
       </select>
 
-      <div id="partecipazione">
-        <label for="adulti">Numero totale degli adulti (compreso te) *</label>
-        <input id="adulti" name="adulti" type="number" min="1" max="10" value="1" required />
+      <label for="allergie">Allergie, intolleranze o esigenze alimentari</label>
+      <textarea
+          id="allergie"
+          name="allergie"
+          rows="3"
+          placeholder="Indica eventuali allergie, celiachia o intolleranze...">
+      </textarea>
 
-        <label for="bambini">Numero di bambini</label>
-        <input id="bambini" name="bambini" type="number" min="0" max="10" value="0" />
+      <label for="trasporto">Hai bisogno del servizio navetta / bus? *</label>
+      <select id="trasporto" name="trasporto">
+        <option value="">— Seleziona —</option>
+        <option value="si">Sì, ne ho bisogno</option>
+        <option value="no">No, verrò con i miei mezzi</option>
+      </select>
 
-        <label for="nomi">Nome e cognome di tutti i partecipanti</label>
-        <textarea
-            id="nomi"
-            name="nomi"
-            rows="4"
-            placeholder="Mario Rossi&#10;Giulia Bianchi&#10;Luca Rossi (6 anni)">
-        </textarea>
+      <label for="alloggio">Da dove vieni e dove alloggi?</label>
+      <input id="alloggio" name="alloggio" type="text" placeholder="Es: Vengo da Milano e alloggerò all'Hotel Salerno..." />
 
-        <label for="allergie">Allergie, intolleranze o esigenze alimentari</label>
-        <textarea
-            id="allergie"
-            name="allergie"
-            rows="4"
-            placeholder="Indica il nome della persona e la relativa esigenza alimentare.&#10;&#10;Esempio:&#10;Giulia: Celiachia&#10;Luca: Allergia alle arachidi">
-        </textarea>
-      </div>
+    </div>
 
-      <label for="messaggio">Un messaggio per gli sposi (facoltativo)</label>
-      <textarea id="messaggio" name="messaggio" rows="4"></textarea>
+    <label for="messaggio">Un messaggio per gli sposi (facoltativo)</label>
+    <textarea id="messaggio" name="messaggio" rows="4"></textarea>
 
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Invia conferma</button>
-      </div>
-      <p class="form-note">Riceverai una mail di conferma. Per dubbi, scrivici!</p>
-    </form>
-  </section>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Invia conferma</button>
+    </div>
+    <p class="form-note">Riceverai una mail di conferma. Per qualsiasi dubbio, scrivici!</p>
+  </form>
+</section>
 </main>
 
 <footer>
@@ -105,55 +113,69 @@
   <div class="footer-links">
     <a href="rsvp.html">RSVP</a> ·
     <a href="info.html">Informazioni</a> ·
-    <a href="../es/index.html">Español</a>
+    <a href="../es/rsvp.html">Español</a>
   </div>
 </footer>
 
 <script>
 const presenza = document.getElementById("presenza");
 const partecipazione = document.getElementById("partecipazione");
+const form = document.getElementById("rsvpForm");
+
+const menu = document.getElementById("menu");
+const trasporto = document.getElementById("trasporto");
 
 presenza.addEventListener("change", () => {
-
     if (presenza.value === "no") {
         partecipazione.style.display = "none";
+        menu.required = false;
+        trasporto.required = false;
     } else {
         partecipazione.style.display = "block";
+        menu.required = true;
+        trasporto.required = true;
     }
-
 });
 
 partecipazione.style.display = "block";
-const form = document.getElementById("rsvpForm");
+menu.required = true;
+trasporto.required = true;
 
 form.addEventListener("submit", async (e) => {
-
     e.preventDefault();
 
     const data = {
-        nome: form.nome.value,
-        email: form.email.value,
-        presenza: form.presenza.value,
-        adulti: form.adulti.value,
-        bambini: form.bambini.value,
-        nomi: form.nomi.value,
-        allergie: form.allergie.value,
-        messaggio: form.messaggio.value
+        nombre: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        telefono: document.getElementById("telefono").value,
+        asistencia: document.getElementById("presenza").value,
+        menu: document.getElementById("menu").value,
+        alergias: document.getElementById("allergie").value,
+        transporte: document.getElementById("trasporto").value,
+        alojamiento_fuera: document.getElementById("alloggio").value,
+        masseria: "-", // Campo vuoto o "-" per la versione italiana
+        mensaje: document.getElementById("messaggio").value
     };
 
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxBaFYatUV-oZB7_PssrRYklUY1sL_HJh1WhFYHMapE7RVqDfV1YY_lxfcXWYIUiBCX/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-    });
+    try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxpcTjIXhJvd03asmKLsI-TIRElJgL9r-zPtaTboTOrQpUulupxDJLLvdOvBnXOX4T0/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
 
-    if(response.ok){
-        alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
-        form.reset();
-    }else{
-        alert("Errore durante l'invio.");
+        if (response.ok) {
+            alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
+            form.reset();
+        } else {
+            alert("Si è verificato un errore durante l'invio. Riprova.");
+        }
+    } catch (error) {
+        alert("Errore di connessione. Controlla la tua rete e riprova.");
     }
-
 });
-</script>  
+</script>
 </body>
 </html>
