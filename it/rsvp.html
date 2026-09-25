@@ -158,17 +158,20 @@ form.addEventListener("submit", async (e) => {
     };
 
     try {
-        await fetch("https://script.google.com/macros/s/AKfycbxpcTjIXhJvd03asmKLsI-TIRElJgL9r-zPtaTboTOrQpUulupxDJLLvdOvBnXOX4T0/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbzpcTjIXhJvd03asmKLsI-TIRElJgL9r-zPtaTboTOrQpUulupxDJLLvdOvBnXOX4T0/exec", {
             method: "POST",
-            mode: "no-cors",
             headers: {
                 "Content-Type": "text/plain;charset=utf-8"
             },
             body: JSON.stringify(data)
         });
 
-        alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
-        form.reset();
+        if (response.ok) {
+            alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
+            form.reset();
+        } else {
+            alert("Si è verificato un errore durante l'invio. Riprova.");
+        }
     } catch (error) {
         alert("Errore di connessione. Controlla la tua rete e riprova.");
     }
