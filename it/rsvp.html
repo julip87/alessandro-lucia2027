@@ -153,29 +153,27 @@ form.addEventListener("submit", async (e) => {
         alergias: document.getElementById("allergie").value,
         transporte: document.getElementById("trasporto").value,
         alojamiento_fuera: document.getElementById("alloggio").value,
-        masseria: "-", // Campo vuoto o "-" per la versione italiana
+        masseria: "-",
         mensaje: document.getElementById("messaggio").value
     };
 
-try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbxpcTjIXhJvd03asmKLsI-TIRElJgL9r-zPtaTboTOrQpUulupxDJLLvdOvBnXOX4T0/exec", {
+    try {
+        await fetch("https://script.google.com/macros/s/AKfycbxpcTjIXhJvd03asmKLsI-TIRElJgL9r-zPtaTboTOrQpUulupxDJLLvdOvBnXOX4T0/exec", {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "text/plain;charset=utf-8"
             },
             body: JSON.stringify(data)
         });
 
-        if (response.ok) {
-            alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
-            form.reset();
-        } else {
-            alert("Si è verificato un errore durante l'invio. Riprova.");
-        }
+        alert("Grazie! Abbiamo ricevuto la tua conferma ❤️");
+        form.reset();
     } catch (error) {
         alert("Errore di connessione. Controlla la tua rete e riprova.");
     }
 });
 </script>
+  
 </body>
 </html>
